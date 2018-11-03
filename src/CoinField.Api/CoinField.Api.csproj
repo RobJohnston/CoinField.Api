@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>rob_johnston</Authors>
+    <Company>rob_johnston</Company>
+    <PackageProjectUrl>https://github.com/RobJohnston/CoinField.Api</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RobJohnston/CoinField.Api</RepositoryUrl>
+    <Description>A .Net Standard client for the CoinField cryptocurrency API.</Description>
+    <Copyright>Copyright © 2018 Rob Johnston</Copyright>
+    <PackageLicenseUrl>https://github.com/RobJohnston/CoinField.Api/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>api-client; cryptocurrency; bitcoin; litecoin; ethereum; zcash; dash; 0x; golem; augur; omisego; salt; bat; zilliqa; coinfield</PackageTags>
+    <PackageReleaseNotes>Sign-up with CoinField: https://coinfield.com/ref/0/ID159F0248CB</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+</Project>
