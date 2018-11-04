@@ -30,43 +30,43 @@ namespace CoinField.Api.Models
             /// Best available bid price.
             /// </summary>
             [JsonProperty("bid")]
-            public float Bid { get; set; }
+            public decimal Bid { get; set; }
 
             /// <summary>
             /// Best available ask price.
             /// </summary>
             [JsonProperty("ask")]
-            public float Ask { get; set; }
+            public decimal Ask { get; set; }
 
             /// <summary>
             /// Lowest traded price in the past 24 hours.
             /// </summary>
             [JsonProperty("low")]
-            public float Low { get; set; }
+            public decimal Low { get; set; }
 
             /// <summary>
             /// Highest traded price in the past 24 hours.
             /// </summary>
             [JsonProperty("high")]
-            public float High { get; set; }
+            public decimal High { get; set; }
 
             /// <summary>
             /// Last traded price.
             /// </summary>
             [JsonProperty("last")]
-            public float Last { get; set; }
+            public decimal Last { get; set; }
 
             /// <summary>
             /// Opening price 24 hours prior to current time.
             /// </summary>
             [JsonProperty("open")]
-            public float Open { get; set; }
+            public decimal Open { get; set; }
 
             /// <summary>
             /// Total volume of the last 24 hours.
             /// </summary>
             [JsonProperty("vol")]
-            public float Vol { get; set; }
+            public decimal Vol { get; set; }
         }
     }
 }
