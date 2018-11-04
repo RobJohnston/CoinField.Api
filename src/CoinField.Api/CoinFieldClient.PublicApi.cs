@@ -85,6 +85,8 @@ namespace CoinField.Api
         /// <remarks>
         /// All available markets can be found at <see cref="GetMarketsAsync"/>.
         /// </remarks>
+        /// <exception cref="CoinFieldException">Bad Request 400 - market or limit field validation failed.</exception>
+        /// <exception cref="CoinFieldException">Not Found 404 - market not found.</exception>
         public async Task<OrderBookResponse> GetOrderBookAsync(string market, int limit = 20)
         {
             return await QueryPublicAsync<OrderBookResponse>(
@@ -104,6 +106,8 @@ namespace CoinField.Api
         /// <remarks>
         /// All available markets can be found at <see cref="GetMarketsAsync"/>.
         /// </remarks>
+        /// <exception cref="CoinFieldException">Bad Request 400 - market or limit field validation failed.</exception>
+        /// <exception cref="CoinFieldException">Not Found 404 - market not found.</exception>
         public async Task<DepthResponse> GetDepthAsync(string market, int limit = 300)
         {
             return await QueryPublicAsync<DepthResponse>(
@@ -124,6 +128,8 @@ namespace CoinField.Api
         /// <remarks>
         /// All available markets can be found at <see cref="GetMarketsAsync"/>.
         /// </remarks>
+        /// <exception cref="CoinFieldException">Bad Request 400 - market or limit field validation failed.</exception>
+        /// <exception cref="CoinFieldException">Not Found 404 - market not found.</exception>
         public async Task<OhlcResponse> GetOhlcAsync(string market, int limit = 30, int period = 5)
         {
             return await GetOhlcAsync(market, long.MinValue, long.MaxValue, limit, period);
@@ -140,6 +146,8 @@ namespace CoinField.Api
         /// <remarks>
         /// All available markets can be found at <see cref="GetMarketsAsync"/>.
         /// </remarks>
+        /// <exception cref="CoinFieldException">Bad Request 400 - market or limit field validation failed.</exception>
+        /// <exception cref="CoinFieldException">Not Found 404 - market not found.</exception>
         public async Task<OhlcResponse> GetOhlcAsync(string market, long from, long to, int limit = 30, int period = 5)
         {
             var parameters = new Dictionary<string, string>(1)
@@ -169,6 +177,8 @@ namespace CoinField.Api
         /// <remarks>
         /// All available markets can be found at <see cref="GetMarketsAsync"/>.
         /// </remarks>
+        /// <exception cref="CoinFieldException">Bad Request 400 - market or limit field validation failed.</exception>
+        /// <exception cref="CoinFieldException">Not Found 404 - market not found.</exception>
         public async Task<TradesResponse> GetTradesAsync(string market, int limit = 50, OrderBy orderBy = OrderBy.desc)
         {
             return await GetTradesAsync(market, long.MaxValue, limit, orderBy);
@@ -184,6 +194,8 @@ namespace CoinField.Api
         /// <remarks>
         /// All available markets can be found at <see cref="GetMarketsAsync"/>.
         /// </remarks>
+        /// <exception cref="CoinFieldException">Bad Request 400 - market or limit field validation failed.</exception>
+        /// <exception cref="CoinFieldException">Not Found 404 - market not found.</exception>
         public async Task<TradesResponse> GetTradesAsync(string market, long timestamp, int limit = 50, OrderBy orderBy = OrderBy.desc)
         {
             var parameters = new Dictionary<string, string>(1)
