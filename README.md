@@ -4,6 +4,7 @@ A .Net Standard client for the CoinField cryptocurrency API.
 This version covers all public methods of the [REST API V1](https://api.coinfield.com/v1/docs/).
 
 [![nuget](https://img.shields.io/nuget/v/CoinField.Api.svg)](https://www.nuget.org/packages/CoinField.Api/)
+![Downloads](https://img.shields.io/nuget/dt/CoinField.Api.svg)
 
 An account is not required to access the public API methods. 
 However, if you do create an account, please use my affiliate link when you register.
@@ -645,3 +646,9 @@ Time: 2018-11-03 11:26:58 PM
 * [EzBtc.Api](https://github.com/RobJohnston/EzBtc.Api)
 * [Coinsquare.Api](https://github.com/RobJohnston/Coinsquare.Api)
 * [AnxPro.Api](https://github.com/RobJohnston/AnxPro.Api)
+
+## Donation addresses
+* BitCoin: 3HRvBkwFQ75WxhHmZjpj59iTL3ecqS4tF7
+* Litecoin: MECXCSdiiYAj1PeobCUGLYmpU7vm3UsyxR
+* ZCash: t3WMebzJcFjopK75tEoGXc2L94Dz7VeqEQF
+* XRP: rK7D3QnTrYdkp1fGKKzHFNXZpqN8dUCfaf
