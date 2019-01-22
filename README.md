@@ -11,6 +11,8 @@ However, if you do create an account, please use my affiliate link when you regi
 It's an easy way to give back to this project at no cost to you: 
 https://coinfield.com/ref/0/ID159F0248CB
 
+<a href="https://coinfield.com/ref/0/ID159F0248CB" target="_blank"><img src="https://s3.ca-central-1.amazonaws.com/coinfield-marketing/october-4/300x250.png" alt="Coinfield Digitial Exchange" width="336" height="280" border="0"></a>
+
 
 ## Installation via NuGet
 ```
@@ -248,8 +250,8 @@ Got 21 currencies in 0ms.
   cad |      fiat |False |Canadian Dollars |    C$ |     CAD |    2
   usd |      fiat |False |      US Dollars |     $ |     USD |    2
   eur |      fiat |False |            Euro |     ? |     EUR |    2
-  jpy |      fiat |False |    Japanese Yen |     ¥ |     JPY |    2
-  gbp |      fiat |False |  British Pounds |     £ |     GBP |    2
+  jpy |      fiat |False |    Japanese Yen |     Â¥ |     JPY |    2
+  gbp |      fiat |False |  British Pounds |     Â£ |     GBP |    2
   aed |      fiat |False |     UAE Dirhams |   AED |     AED |    2
   xrp |    crypto |False |             XRP |   XRP |         |    8
   btc |    crypto |False |         Bitcoin |     ? |     XBT |    8
