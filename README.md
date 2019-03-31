@@ -650,7 +650,13 @@ Time: 2018-11-03 11:26:58 PM
 * [AnxPro.Api](https://github.com/RobJohnston/AnxPro.Api)
 
 ## Donation addresses
-* BitCoin: 3HRvBkwFQ75WxhHmZjpj59iTL3ecqS4tF7
-* Litecoin: MECXCSdiiYAj1PeobCUGLYmpU7vm3UsyxR
-* ZCash: t3WMebzJcFjopK75tEoGXc2L94Dz7VeqEQF
-* XRP: rK7D3QnTrYdkp1fGKKzHFNXZpqN8dUCfaf
+* Ripple (XRP): rK7D3QnTrYdkp1fGKKzHFNXZpqN8dUCfaf  Tag: 483
+* BitCoin (BTC): 3HRvBkwFQ75WxhHmZjpj59iTL3ecqS4tF7
+* Ethereum (ETH): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* Stellar (XLM): GBVLC3JDKTEMS4I4LQ2RCNVSA2LBVO5FY6G3HPMEESWHB4S6PMC3IXPT  Memo: 130
+* Litecoin (LTC): MECXCSdiiYAj1PeobCUGLYmpU7vm3UsyxR
+* Bitcoin Cash (BCH): 3DMnrmTJAQZ6ztag1B3WLeE7uQYNr69rxA
+* Dash (DASH): 7nq7YxodXuDKy8YwpZzzKD19gmo53yLJQC
+* ZCash (ZEC): t3WMebzJcFjopK75tEoGXc2L94Dz7VeqEQF
+* DigiByte (DGB): DBNYEyt3zjvbw5J1hbGe9KNhNNxPcrMbLv
+* 0x (ZRX): 0xaed6becb8390c1616156be330ad09a75db4b47b4
