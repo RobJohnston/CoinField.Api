@@ -15,6 +15,7 @@ namespace CoinField.Api
 {
     public partial class CoinFieldClient : IDisposable
     {
+        private string _token;
         private string _url;
         private string _version;
 
@@ -38,6 +39,11 @@ namespace CoinField.Api
             _httpClient.BaseAddress = new Uri(string.Format("{0}/{1}/", _url, _version));
         }
 
+        public CoinFieldClient(string token) : this()
+        {
+            _token = token;
+        }
+
         public CoinFieldClient(Uri uri, string version)
         {
             _url = uri.ToString();
@@ -45,7 +51,22 @@ namespace CoinField.Api
             _httpClient.BaseAddress = new Uri(string.Format("{0}{1}/", _url, _version));
         }
 
+        public CoinFieldClient(Uri uri, string version, string token) : this(uri, version)
+        {
+            _token = token;
+        }
+
         #endregion
+
+        private Task<T> DeleteAsync<T>(string requestUrl, Dictionary<string, string> args = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        private Task<T> PostAsync<T>(string requestUrl, Dictionary<string, string> args = null)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Sends a public GET request to the CoinField API as an asynchronous operation.
@@ -78,6 +99,45 @@ namespace CoinField.Api
             return await SendRequestAsync<T>(req).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// Sends a private GET request to the CoinField API as an asynchronous operation.
+        /// </summary>
+        /// <typeparam name="T">Type of data contained in the response.</typeparam>
+        /// <param name="requestUrl">The relative URL the request is sent to.</param>
+        /// <param name="args">Optional arguments passed as querystring parameters.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <remarks>The <paramref name="requestUrl"/> is relative to https://api.coinfield.com/v1/</remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="requestUrl"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException">The request is not secure.</exception>
+        /// <exception cref="HttpRequestException">There was a problem with the HTTP request.</exception>
+        /// <exception cref="CoinFieldException">There was a problem with the CoinField API call.</exception>
+        public async Task<T> QueryPrivateAsync<T>(string requestUrl, Dictionary<string, string> args = null)
+        {
+            if (requestUrl == null)
+                throw new ArgumentNullException(nameof(requestUrl));
+
+            args = args ?? new Dictionary<string, string>(0);
+
+            // Setup request.
+            var urlEncodedArgs = UrlEncode(args);
+
+            var req = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(_httpClient.BaseAddress, string.Format("{0}?{1}", requestUrl, urlEncodedArgs))
+            };
+
+            // Ensure that the token is not sent in the clear!
+            if (req.RequestUri.Scheme != Uri.UriSchemeHttps)
+                throw new ArgumentException("The provided URI scheme is invalid.  Expected 'https'.");
+
+            // Add the bearer token.
+            req.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _token);
+
+            // Send request and deserialize response.
+            return await SendRequestAsync<T>(req).ConfigureAwait(false);
+        }
+
         public void Dispose()
         {
             _httpClient.Dispose();
@@ -85,14 +145,13 @@ namespace CoinField.Api
 
         #region Private methods
 
-
         private async Task<T> SendRequestAsync<T>(HttpRequestMessage req)
         {
             var reqCtx = new RequestContext
             {
                 HttpRequest = req
             };
-
+            
             // Perform the HTTP request.
             var res = await _httpClient.SendAsync(reqCtx.HttpRequest).ConfigureAwait(false);
 

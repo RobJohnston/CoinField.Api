@@ -45,10 +45,22 @@ namespace CoinField.Api.Models
             public string Volume { get; set; }
 
             /// <summary>
+            /// The order ID associated with this trade.
+            /// </summary>
+            [JsonProperty("order_id")]
+            public string OrderId { get; set; }
+
+            /// <summary>
             /// Total value of the trade in base currency.
             /// </summary>
             [JsonProperty("total_value")]
             public string TotalValue { get; set; }
+
+            /// <summary>
+            /// Side of the order bid|ask.
+            /// </summary>
+            [JsonProperty("side")]
+            public OrderType Side { get; set; }
 
             /// <summary>
             /// ISO 8601 time of when the trade was executed.

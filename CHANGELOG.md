@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Changed
 - Changed all floats to decimals.
 
+### Added
+- Private methods that use the GET verb.
+
 ## 1.0.0 - 2018-11-03
 ### Added
 - First release.
