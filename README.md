@@ -1,7 +1,7 @@
 # CoinField.Api
 A .Net Standard client for the CoinField cryptocurrency API.
 
-This version covers all public methods of the [REST API V1](https://api.coinfield.com/v1/docs/).
+This version covers most all public methods of the [REST API V1](https://api.coinfield.com/v1/docs/).
 
 [![nuget](https://img.shields.io/nuget/v/CoinField.Api.svg)](https://www.nuget.org/packages/CoinField.Api/)
 ![Downloads](https://img.shields.io/nuget/dt/CoinField.Api.svg)
@@ -597,6 +597,22 @@ Got trades for 'btccad' in 13ms.
 Press any key to exit.
 
 ```
+
+## API Coverage
+
+| PUBLIC                 |    Covered     |  Description
+|------------------------|:--------------:|:--------------
+| status                 |  ✔            | Get the status
+| timestamp              |  ✔            | Get the timestamp of the server
+| currencies             |  ✔            | Get a list of all available currencies on the platform
+| markets                |  ✔            | Get all available markets
+| tickers                |  ✔            | Get tickers for all or a specific market
+| orderbook              |  ✔            | Get orderbook for a specific market
+| depth                  |  ✔            | Get depth for a specific market
+| ohlc                   |  ✔            | OHLC (KLine) of a specific market
+| trades                 |  ✔            | Get trades for a specific market
+| leaderboard            |  ❌            | Get Leaderboard for referrals
+
 
 ## Exception handling example
 ```csharp
