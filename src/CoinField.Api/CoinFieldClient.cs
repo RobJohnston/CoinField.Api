@@ -19,7 +19,7 @@ namespace CoinField.Api
         private string _version;
 
         private static readonly CultureInfo _culture = CultureInfo.InvariantCulture;
-        private readonly HttpClient _httpClient = new HttpClient();
+        private readonly HttpClient _httpClient;
 
         internal static readonly JsonSerializerSettings JsonSettings = new JsonSerializerSettings
         {
@@ -35,14 +35,27 @@ namespace CoinField.Api
         {
             _url = "https://api.coinfield.com";
             _version = "v1";
-            _httpClient.BaseAddress = new Uri(string.Format("{0}/{1}/", _url, _version));
+            _httpClient = new HttpClient
+            {
+                BaseAddress = new Uri(string.Format("{0}/{1}/", _url, _version))
+            };
         }
 
         public CoinFieldClient(Uri uri, string version)
         {
             _url = uri.ToString();
             _version = version;
-            _httpClient.BaseAddress = new Uri(string.Format("{0}{1}/", _url, _version));
+            _httpClient = new HttpClient
+            {
+                BaseAddress = new Uri(string.Format("{0}{1}/", _url, _version))
+            };
+        }
+
+        public CoinFieldClient(HttpClient client)
+        {
+            //_url = $"{ client.BaseAddress.Scheme}//{ client.BaseAddress.Authority}";
+            //_version = "v1";
+            _httpClient = client;
         }
 
         #endregion
@@ -67,11 +80,12 @@ namespace CoinField.Api
 
             // Setup request.
             var urlEncodedArgs = UrlEncode(args);
+            var relativeUri = urlEncodedArgs == string.Empty ? $"{requestUrl}" : $"{requestUrl}?{urlEncodedArgs}";
 
             var req = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(_httpClient.BaseAddress, string.Format("{0}?{1}", requestUrl, urlEncodedArgs))
+                RequestUri = new Uri(_httpClient.BaseAddress, relativeUri)
             };
 
             // Send request and deserialize response.
