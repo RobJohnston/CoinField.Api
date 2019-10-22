@@ -5,6 +5,7 @@ using System;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CoinField.Api.Tests
 {
@@ -21,7 +22,7 @@ namespace CoinField.Api.Tests
         };
 
         [TestMethod]
-        public void GetStatus_ShouldReturnStatus()
+        public async Task GetStatus_ShouldReturnStatus()
         {
             // Arange
             var state = "ok";
@@ -40,7 +41,7 @@ namespace CoinField.Api.Tests
             // Act
             using (var client = new CoinFieldClient(_fakeHttpClient))
             {
-                result = client.GetStatusAsync().Result;
+                result = await client.GetStatusAsync();
             }
 
             // Assert
@@ -49,7 +50,7 @@ namespace CoinField.Api.Tests
         }
 
         [TestMethod]
-        public void GetTimestamp_ShouldReturnISO8601()
+        public async Task GetTimestamp_ShouldReturnISO8601()
         {
             // Arange
             var utcNow = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
@@ -68,7 +69,7 @@ namespace CoinField.Api.Tests
             // Act
             using (var client = new CoinFieldClient(_fakeHttpClient))
             {
-                result = client.GetTimestampAsync().Result;
+                result = await client.GetTimestampAsync();
             }
 
             // Assert
