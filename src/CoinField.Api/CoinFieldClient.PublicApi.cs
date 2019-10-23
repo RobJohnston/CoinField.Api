@@ -72,7 +72,7 @@ namespace CoinField.Api
         public async Task<TickersResponse> GetTickerAsync(string market)
         {
             return await QueryPublicAsync<TickersResponse>(
-                string.Format("tickers/{0}", market),
+                $"tickers/{market}",
                 null
             );
         }
@@ -90,10 +90,10 @@ namespace CoinField.Api
         public async Task<OrderBookResponse> GetOrderBookAsync(string market, int limit = 20)
         {
             return await QueryPublicAsync<OrderBookResponse>(
-                string.Format("orderbook/{0}", market),
+                $"orderbook/{market}",
                 new Dictionary<string, string>(1)
                 {
-                    ["limit"] = Convert.ToString(limit)
+                    ["limit"] = Convert.ToString(limit, _culture)
                 }
             );
         }
@@ -111,10 +111,10 @@ namespace CoinField.Api
         public async Task<DepthResponse> GetDepthAsync(string market, int limit = 300)
         {
             return await QueryPublicAsync<DepthResponse>(
-                string.Format("depth/{0}", market),
+                $"depth/{market}",
                 new Dictionary<string, string>(1)
                 {
-                    ["limit"] = Convert.ToString(limit)
+                    ["limit"] = Convert.ToString(limit, _culture)
                 }
             );
         }
@@ -152,18 +152,18 @@ namespace CoinField.Api
         {
             var parameters = new Dictionary<string, string>(1)
             {
-                ["limit"] = Convert.ToString(limit),
-                ["period"] = Convert.ToString(period)
+                ["limit"] = Convert.ToString(limit, _culture),
+                ["period"] = Convert.ToString(period, _culture)
             };
 
             if (from > long.MinValue)
-                parameters.Add("from", Convert.ToString(from));
+                parameters.Add("from", Convert.ToString(from, _culture));
 
             if (to < long.MaxValue)
-                parameters.Add("to", Convert.ToString(to));
+                parameters.Add("to", Convert.ToString(to, _culture));
 
             return await QueryPublicAsync<OhlcResponse>(
-                string.Format("ohlc/{0}", market),
+                $"ohlc/{market}",
                 parameters
             );
         }
@@ -200,15 +200,15 @@ namespace CoinField.Api
         {
             var parameters = new Dictionary<string, string>(1)
             {
-                ["limit"] = Convert.ToString(limit),
+                ["limit"] = Convert.ToString(limit, _culture),
                 ["order_by"] = orderBy.ToString()
             };
 
             if (timestamp < long.MaxValue)
-                parameters.Add("timestamp", Convert.ToString(timestamp));
+                parameters.Add("timestamp", Convert.ToString(timestamp, _culture));
 
             return await QueryPublicAsync<TradesResponse>(
-                string.Format("trades/{0}", market),
+                $"trades/{market}",
                 parameters
             );
         }

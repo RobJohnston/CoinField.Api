@@ -35,14 +35,14 @@ namespace CoinField.Api
         {
             _url = "https://api.coinfield.com";
             _version = "v1";
-            _httpClient.BaseAddress = new Uri(string.Format("{0}/{1}/", _url, _version));
+            _httpClient.BaseAddress = new Uri($"{_url}/{_version}/");
         }
 
         public CoinFieldClient(Uri uri, string version)
         {
             _url = uri.ToString();
             _version = version;
-            _httpClient.BaseAddress = new Uri(string.Format("{0}{1}/", _url, _version));
+            _httpClient.BaseAddress = new Uri($"{_url}{_version}/");
         }
 
         #endregion
@@ -71,7 +71,7 @@ namespace CoinField.Api
             var req = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(_httpClient.BaseAddress, string.Format("{0}?{1}", requestUrl, urlEncodedArgs))
+                RequestUri = new Uri(_httpClient.BaseAddress, $"{requestUrl}?{urlEncodedArgs}")
             };
 
             // Send request and deserialize response.
