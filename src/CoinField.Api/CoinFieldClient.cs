@@ -78,13 +78,7 @@ namespace CoinField.Api
             return await SendRequestAsync<T>(req).ConfigureAwait(false);
         }
 
-        public void Dispose()
-        {
-            _httpClient.Dispose();
-        }
-
         #region Private methods
-
 
         private async Task<T> SendRequestAsync<T>(HttpRequestMessage req)
         {
@@ -155,6 +149,31 @@ namespace CoinField.Api
                 // The 'status' call expects a string but an error expects an integer.
                 // E.g., "Could not convert string to integer: ok."
                 Trace.TraceWarning(ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region IDisposable Support
+
+        private bool disposedValue = false;
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    _httpClient.Dispose();
+                }
+
+                disposedValue = true;
             }
         }
 
