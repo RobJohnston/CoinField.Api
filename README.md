@@ -11,7 +11,7 @@ However, if you do create an account, please use my affiliate link when you regi
 It's an easy way to give back to this project at no cost to you: 
 https://coinfield.com/ref/0/ID159F0248CB
 
-<a href="https://coinfield.com/ref/0/ID159F0248CB" target="_blank"><img src="https://s3.ca-central-1.amazonaws.com/coinfield-marketing/october-1/728x90.png" alt="Coinfield Digitial Exchange" width="728" height="90" border="0"></a>
+[![Coinfield Digitial Exchange](https://s3.ca-central-1.amazonaws.com/coinfield-marketing/october-22/728x90.png)](https://coinfield.com/ref/0/ID159F0248CB)
 
 
 ## Installation via NuGet
