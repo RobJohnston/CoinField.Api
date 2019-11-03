@@ -676,3 +676,13 @@ Time: 2018-11-03 11:26:58 PM
 * ZCash (ZEC): t3WMebzJcFjopK75tEoGXc2L94Dz7VeqEQF
 * DigiByte (DGB): DBNYEyt3zjvbw5J1hbGe9KNhNNxPcrMbLv
 * 0x (ZRX): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* Golem (GNT): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* OmiseGO (OMG): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* Augur (REP): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* Bitcoin Gold (BTG): APVyq5pRHV4YWXvKm6TtFifQo6FUxGwbkQ
+* Salt (SALT): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* BAT (BAT): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* Zilliqa (ZIL): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* Loom (LOOM): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* USD Coin (USDC): 0xaed6becb8390c1616156be330ad09a75db4b47b4
+* Civic (CVC): 0xaed6becb8390c1616156be330ad09a75db4b47b4
