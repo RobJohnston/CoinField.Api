@@ -659,11 +659,9 @@ Time: 2018-11-03 11:26:58 PM
 
 ## My related projects
 
-* [Ndax.Api](https://github.com/RobJohnston/Ndax.Api) and [AlphaPoint.Api](https://github.com/RobJohnston/alphapoint.api/)
+* [AlphaPoint.Api](https://github.com/RobJohnston/AlphaPoint.Api/)
 * [Coinsquare.Api](https://github.com/RobJohnston/Coinsquare.Api)
-* [AnxPro.Api](https://github.com/RobJohnston/AnxPro.Api)
-* [~~EzBtc.Api~~](https://github.com/RobJohnston/EzBtc.Api)
-* [~~QuadrigaCX.Api~~](https://github.com/RobJohnston/QuadrigaCX.Api)
+* [Ndax.Api](https://github.com/RobJohnston/Ndax.Api)
 
 ## Donation addresses
 * Ripple (XRP): rK7D3QnTrYdkp1fGKKzHFNXZpqN8dUCfaf  Tag: 483
