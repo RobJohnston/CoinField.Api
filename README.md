@@ -1,3 +1,8 @@
+Archiving this repository as the site hasn't been accessible lately and it seems they got into a bit of legal trouble:
+https://www.capitalmarketstribunal.ca/sites/default/files/2023-10/soa_20231002_manticore-labs.pdf
+==
+
+
 # CoinField.Api
 A .Net Standard client for the CoinField cryptocurrency API.
 
